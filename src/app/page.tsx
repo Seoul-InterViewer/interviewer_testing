@@ -43,7 +43,7 @@ export default function Home() {
             </nav>
             <div className="pt-4 border-t">
               <Link
-                href="/login"
+                href="/auth/login"
                 className="block p-2 hover:bg-gray-100 rounded text-red-500"
               >
                 Logout

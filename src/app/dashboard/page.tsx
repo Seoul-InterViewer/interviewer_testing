@@ -1,6 +1,4 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
+import testAction from "@/actions/testAction";
 import {
   Card,
   CardContent,
@@ -8,11 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import Link from "next/link";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const data = await testAction();
+  console.log(data);
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="flex">
