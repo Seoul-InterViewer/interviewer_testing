@@ -12,14 +12,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useFormState } from "react-dom";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [state, formAction] = useFormState(loginAction, null);
+  const router = useRouter();
 
   if (state?.success) {
-    redirect("/");
+    router.push("/");
   }
 
   return (
