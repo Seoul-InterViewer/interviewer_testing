@@ -12,16 +12,18 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
+import { useActionState, useEffect } from "react";
 
 export default function LoginPage() {
-  const [state, formAction] = useFormState(loginAction, null);
+  const [state, formAction] = useActionState(loginAction, null);
   const router = useRouter();
 
-  if (state?.success) {
-    router.push("/");
-  }
+  useEffect(() => {
+    if (state?.success) {
+      router.push("/");
+    }
+  }, [state?.success, router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
