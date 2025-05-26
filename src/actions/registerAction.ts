@@ -15,6 +15,7 @@ const registerAction = async (
       email: email as string,
       password: password as string,
       options: {
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`,
         data: {
           displayName: displayName as string,
         },
