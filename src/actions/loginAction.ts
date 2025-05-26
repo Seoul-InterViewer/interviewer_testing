@@ -7,7 +7,6 @@ const loginAction = async (
   formData: FormData
 ): Promise<{ success: boolean; error?: string }> => {
 
-  console.log(formData)
   try {
     const email = formData.get("email");
     const password = formData.get("password");
